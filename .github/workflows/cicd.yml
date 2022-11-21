@@ -38,4 +38,6 @@ jobs:
 
       - name: Test installation
         run:  ~/snowflake/snowsql -v
-               
+      - name : execute  ddls
+        run  : for  file in `ls -1  $GITHUB_WOKSPACE/*.sql ` ; do ; echo  $file  ; done;
+
