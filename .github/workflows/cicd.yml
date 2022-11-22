@@ -46,9 +46,9 @@ jobs:
         run:  ~/snowflake/snowsql -v
       - name : execute  ddls
         run  :  |
-                 for  file  in `ls  $GITHUB_WOKSPACE/_temp`
+                 for  file  in `ls  $GITHUB_WOKSPACE`
                   do
-                      echo "$file"  
+                      echo "$GITHUB_WORKSPACE"
                   done
         # | xargs  ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -f
 
