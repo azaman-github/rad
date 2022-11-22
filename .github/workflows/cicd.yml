@@ -48,7 +48,7 @@ jobs:
       - name : execute  ddls
         run  :  |
                  ls -R
-                 for  file  in `ls  $GITHUB_WOKSPACE/*.sql`
+                 for  file  in `ls  ${GITHUB_WOKSPACE}/*.sql`
                   do
                       #echo "$GITHUB_WORKSPACE"
                       echo "$file"
