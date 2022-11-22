@@ -50,6 +50,6 @@ jobs:
                  do
                      echo $file
                  done
-!
+              !
         # | xargs  ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -f
 
