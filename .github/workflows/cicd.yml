@@ -16,9 +16,9 @@ on:
   #pull_request:
     #branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows you to run this workflow manually from the Actions tab, download contents from main branch
   workflow_dispatch:
-    branches: [ "main" ]
+    branches: [ "deployment" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -47,11 +47,11 @@ jobs:
         run:  ~/snowflake/snowsql -v
       - name : execute  ddls
         run  :  |
-                 ls -R
+                 #ls -R
                  for  file  in `ls  ${GITHUB_WORKSPACE}/*.sql`
                   do
                       #echo "$GITHUB_WORKSPACE"
-                      echo "$file"
+                       echo "Executing command file, $file"
                       ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -f  $file
                   done
 
