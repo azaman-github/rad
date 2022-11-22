@@ -6,7 +6,7 @@ name: CICD
 env:
   SNOWFLAKE_ACCOUNT : DU86785.eu-west-2.aws
   SNOWFLAKE_USER    : azaman
-  SNOWSQL_PWD       : Nurmak01__
+  SNOWSQL_PWD       : "Nurmak01__"
   
 # Controls when the workflow will run
 on:
@@ -45,5 +45,5 @@ jobs:
       - name: Test installation
         run:  ~/snowflake/snowsql -v
       - name : execute  ddls
-        run  : ls -1  $GITHUB_WOKSPACE/*.sql | xargs  ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -p ${SNOWSQL_PWD} -
+        run  : ls -1  $GITHUB_WOKSPACE/*.sql | xargs  ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -p ${SNOWSQL_PWD}
 
