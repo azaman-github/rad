@@ -45,6 +45,6 @@ jobs:
       - name: Test installation
         run:  ~/snowflake/snowsql -v
       - name : execute  ddls
-        run  : ls -l  $GITHUB_WOKSPACE
+        run  : ls  $GITHUB_WOKSPACE
         # | xargs  ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -f
 
