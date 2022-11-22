@@ -53,6 +53,6 @@ jobs:
                   do
                       echo "$GITHUB_WORKSPACE"
                       echo "$file"
-                       # ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -f  $file
+                      ~/snowflake/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -f  f1.sql
                   done
 
