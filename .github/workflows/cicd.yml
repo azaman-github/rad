@@ -48,7 +48,7 @@ jobs:
         run:  ~/snowflake/snowsql -v
       - name : execute  ddls
         run  :  |
-                 for  file  in `ls  $GITHUB_WOKSPACE`
+                 for  file  in `ls  $GITHUB_WOKSPACE/*`
                   do
                       echo "$GITHUB_WORKSPACE"
                       echo "$file"
