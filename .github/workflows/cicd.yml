@@ -2,6 +2,12 @@
 
 name: CICD
 
+# Define environments variables
+env:
+  SNOWFLAKE_ACCOUNT : DU86785.eu-west-2.aws
+  SNOWFLAKE_USER    : azaman
+  SNOWSQL_PWD       : Nurmak01__
+  
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -39,5 +45,5 @@ jobs:
       - name: Test installation
         run:  ~/snowflake/snowsql -v
       - name : execute  ddls
-        run  : ls -1  $GITHUB_WOKSPACE/*.sql | xargs  echo
+        run  : ls -1  $GITHUB_WOKSPACE/*.sql | xargs  ~/snowsql  -a  ${SNOWFLAKE_ACCOUNT}  -u ${SNOWFLAKE_USER} -p ${SNOWSQL_PWD} -
 
